@@ -1,19 +1,19 @@
 package com.example
 
 import com.example.plugins.*
-import io.ktor.server.netty.*
 import io.ktor.server.application.Application
 
 /**
  * Kotlin main method - starts the Ktor engine.
  * After running in IDEA this should be available at localhost:8080.
  */
-fun main(args: Array<String>) = EngineMain.main(args)
+fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 /**
  * Ktor [module], will configure the ktor client.
  */
 @Suppress("unused")
 fun Application.module() {
+    configureSerialization()
     configureRouting()
 }
