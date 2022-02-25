@@ -2,15 +2,14 @@
  * Use external dependencies using the following annotations:
  */
 @file:Repository("https://repo.maven.apache.org")
-@file:DependsOn("org.apache.commons:commons-text:1.6")
 @file:DependsOn("io.github.ackeecz:danger-kotlin-detekt:0.1.4")
 
 import io.github.ackeecz.danger.detekt.DetektPlugin
+import systems.danger.kotlin.*
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.function.BiPredicate
 import java.util.stream.Collectors
-import systems.danger.kotlin.*
 
 register plugin DetektPlugin
 
@@ -31,12 +30,12 @@ danger(args) {
 
         // Ensure title is provided
         if (pullRequest.title.length < 5) {
-            failure("Please provide a title for the pull request")
+            fail("Please provide a title for the pull request")
         }
 
         // Ensure body is provided
-        if (pullRequest.body.length < 5) {
-            failure("Please provide a description for the pull request")
+        if (pullRequest.body?.length ?: 0 < 5) {
+            fail("Please provide a description for the pull request")
         }
     }
 
