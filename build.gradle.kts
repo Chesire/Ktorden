@@ -40,6 +40,7 @@ tasks {
     @Suppress("UnusedPrivateMember")
     val detektCheck by registering(Detekt::class) {
         parallel = true
+        ignoreFailures = true
         setSource(files(projectDir))
         include("**/*.kt")
         include("**/*.kts")
