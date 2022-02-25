@@ -6,6 +6,9 @@ import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
 
+/**
+ * Configures and starts the Ktor routing.
+ */
 fun Application.configureRouting() {
     routing {
         get("/") {

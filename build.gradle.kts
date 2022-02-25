@@ -1,11 +1,13 @@
 import Version.Kotlin
 import Version.Ktor
 import Version.Logback
+import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
     application
     kotlin("jvm") version Version.Kotlin
     id("com.github.johnrengelman.shadow") version Version.ShadowJar
+    id("io.gitlab.arturbosch.detekt") version Version.Detekt
     id("org.jetbrains.kotlin.plugin.serialization") version Version.Kotlin
     id("org.jlleitschuh.gradle.ktlint") version Version.KtLint
 }
@@ -32,4 +34,16 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-tests-jvm:$Ktor")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$Kotlin")
+}
+
+tasks {
+    @Suppress("UnusedPrivateMember")
+    val detektCheck by registering(Detekt::class) {
+        parallel = true
+        setSource(files(projectDir))
+        include("**/*.kt")
+        include("**/*.kts")
+        exclude("**/resources/**")
+        exclude("**/build/**")
+    }
 }
