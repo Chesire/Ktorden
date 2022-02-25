@@ -36,7 +36,7 @@ danger(args) {
 
         // Ensure body is provided
         if (pullRequest.body.length < 5) {
-            failure(Please provide a description for the pull request")
+            failure("Please provide a description for the pull request")
         }
     }
 
