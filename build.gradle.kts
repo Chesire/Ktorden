@@ -1,4 +1,3 @@
-import Version.Kotlin
 import io.gitlab.arturbosch.detekt.Detekt
 
 @Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
@@ -32,7 +31,7 @@ dependencies {
     implementation(libs.ktor.server.status.pages)
 
     testImplementation(libs.ktor.server.tests)
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$Kotlin")
+    testImplementation(libs.kotlin.test.junit)
 }
 
 tasks {
