@@ -10,6 +10,7 @@ dependencyResolutionManagement {
             version("logbackVersion", "1.2.10")
             version("shadowVersion", "7.1.2")
 
+            library("kotlin-test-junit", "org.jetbrains.kotlin", "kotlin-test-junit").versionRef("kotlinVersion")
             library(
                 "ktor-serialization-kotlinx-json",
                 "io.ktor",
@@ -25,7 +26,6 @@ dependencyResolutionManagement {
             library("ktor-server-netty", "io.ktor", "ktor-server-netty-jvm").versionRef("ktorVersion")
             library("ktor-server-status-pages", "io.ktor", "ktor-server-status-pages-jvm").versionRef("ktorVersion")
             library("ktor-server-tests", "io.ktor", "ktor-server-tests-jvm").versionRef("ktorVersion")
-            library("kotlin-test-junit", "org.jetbrains.kotlin", "kotlin-test-junit").versionRef("kotlinVersion")
             library("logback", "ch.qos.logback", "logback-classic").versionRef("logbackVersion")
 
             plugin("detekt", "io.gitlab.arturbosch.detekt").versionRef("detektVersion")
