@@ -1,15 +1,13 @@
-import Version.Kotlin
-import Version.Ktor
-import Version.Logback
 import io.gitlab.arturbosch.detekt.Detekt
 
+@Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
 plugins {
     application
-    kotlin("jvm") version Version.Kotlin
-    id("com.github.johnrengelman.shadow") version Version.ShadowJar
-    id("io.gitlab.arturbosch.detekt") version Version.Detekt
-    id("org.jetbrains.kotlin.plugin.serialization") version Version.Kotlin
-    id("org.jlleitschuh.gradle.ktlint") version Version.KtLint
+    kotlin("jvm") version libs.versions.kotlinVersion.get()
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.shadow)
 }
 
 group = "com.example"
@@ -24,16 +22,16 @@ repositories {
 }
 
 dependencies {
-    implementation("ch.qos.logback:logback-classic:$Logback")
-    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$Ktor")
-    implementation("io.ktor:ktor-server-content-negotiation-jvm:$Ktor")
-    implementation("io.ktor:ktor-server-core-jvm:$Ktor")
-    implementation("io.ktor:ktor-server-host-common-jvm:$Ktor")
-    implementation("io.ktor:ktor-server-netty-jvm:$Ktor")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$Ktor")
+    implementation(libs.logback)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.host.common)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.status.pages)
 
-    testImplementation("io.ktor:ktor-server-tests-jvm:$Ktor")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$Kotlin")
+    testImplementation(libs.ktor.server.tests)
+    testImplementation(libs.kotlin.test.junit)
 }
 
 tasks {
