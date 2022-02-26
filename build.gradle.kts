@@ -3,7 +3,7 @@ import io.gitlab.arturbosch.detekt.Detekt
 @Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
 plugins {
     application
-    kotlin("jvm") version libs.versions.kotlinVersion.get()
+    kotlin("jvm") version libs.versions.kotlin.get()
     alias(libs.plugins.detekt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ktlint)
