@@ -83,8 +83,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  danger
-  danger-checkstyle_format
+  danger (> 0)
+  danger-checkstyle_format (> 0)
 
 BUNDLED WITH
    2.2.22
