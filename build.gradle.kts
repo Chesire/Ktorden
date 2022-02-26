@@ -1,15 +1,14 @@
 import Version.Kotlin
-import Version.Ktor
-import Version.Logback
 import io.gitlab.arturbosch.detekt.Detekt
 
+@Suppress("DSL_SCOPE_VIOLATION", "UnstableApiUsage")
 plugins {
     application
-    kotlin("jvm") version Version.Kotlin
-    id("com.github.johnrengelman.shadow") version Version.ShadowJar
-    id("io.gitlab.arturbosch.detekt") version Version.Detekt
-    id("org.jetbrains.kotlin.plugin.serialization") version Version.Kotlin
-    id("org.jlleitschuh.gradle.ktlint") version Version.KtLint
+    kotlin("jvm") version libs.versions.kotlinVersion.get()
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.shadow)
 }
 
 group = "com.example"
