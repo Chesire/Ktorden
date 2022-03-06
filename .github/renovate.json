@@ -2,7 +2,14 @@
   "extends": [
     "config:base"
   ],
-  "assignees": ["Chesire"],
+  "assignees": [
+    "Chesire"
+  ],
   "branchPrefix": "deps/",
-  "labels": ["dependencies"]
+  "labels": [
+    "dependencies"
+  ],
+  "bundler": {
+    "rangeStrategy": "update-lockfile"
+  }
 }
