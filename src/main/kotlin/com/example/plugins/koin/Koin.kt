@@ -4,8 +4,6 @@ import io.ktor.server.application.Application
 import io.ktor.server.application.install
 import org.koin.ktor.ext.Koin
 
-// import org.koin.ktor.ext.Koin
-
 /**
  * Installs and configures the [Koin] plugin.
  */
