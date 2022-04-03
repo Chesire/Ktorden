@@ -23,6 +23,7 @@ repositories {
 
 dependencies {
     implementation(libs.logback)
+    implementation(libs.koin.ktor)
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.ktor.server.content.negotiation)
     implementation(libs.ktor.server.core)
@@ -30,8 +31,10 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.status.pages)
 
-    testImplementation(libs.ktor.server.tests)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit4)
     testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.ktor.server.tests)
 }
 
 tasks {
