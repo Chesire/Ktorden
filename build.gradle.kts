@@ -33,8 +33,8 @@ dependencies {
 
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.test.junit4)
-    testImplementation(libs.ktor.server.tests)
     testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.ktor.server.tests)
 }
 
 tasks {

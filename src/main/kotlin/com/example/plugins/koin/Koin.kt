@@ -8,7 +8,7 @@ import org.koin.ktor.ext.Koin
  * Installs and configures the [Koin] plugin.
  */
 fun Application.configureKoin() {
-    install(Koin) {
-        modules(defaultModules)
+    install(KoinPlugin) {
+        modules()
     }
 }
