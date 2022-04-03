@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version libs.versions.kotlin.get()
     alias(libs.plugins.detekt)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kover)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.shadow)
 }
