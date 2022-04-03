@@ -2,6 +2,7 @@ package com.example
 
 import com.example.plugins.configureRouting
 import com.example.plugins.configureSerialization
+import com.example.plugins.configureStatusPages
 import com.example.plugins.koin.configureKoin
 import io.ktor.server.application.Application
 
@@ -18,5 +19,6 @@ fun main(args: Array<String>) = io.ktor.server.netty.EngineMain.main(args)
 fun Application.module() {
     configureKoin()
     configureSerialization()
+    configureStatusPages()
     configureRouting()
 }
