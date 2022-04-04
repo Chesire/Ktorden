@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: run shadowJar
         run: ./gradlew shadowJar
-        
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -24,14 +24,15 @@ jobs:
         run: ./gradlew test
       - name: run koverReport
         run: ./gradlew koverReport
-        
+      - uses: codecov/codecov-action@v2.1.0
+
   ktlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: run ktlintCheck
         run: ./gradlew ktlintCheck
-        
+
   analyze:
     runs-on: ubuntu-latest
     if: github.event_name  == 'pull_request'
