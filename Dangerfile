@@ -18,6 +18,8 @@ warn "This PR does not have any assignees yet." unless github.pr_json["assignee"
 warn "PR is classed as Work in Progress" if github.pr_title.include? "[WIP]"
 warn "Big PR" if git.lines_of_code > 500
 
-# CheckstyleFormat
-checkstyle_format.base_path = Dir.pwd
-checkstyle_format.report 'build/reports/detekt/detekt.xml'
+# Detekt
+kotlin_detekt.skip_gradle_task = true
+kotlin_detekt.filtering = true
+kotlin_detekt.report_file = "build/reports/detekt/detekt.xml" 
+kotlin_detekt.detekt(inline_mode: true)
