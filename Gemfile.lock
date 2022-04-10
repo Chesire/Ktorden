@@ -55,7 +55,7 @@ GEM
     faraday-retry (1.0.3)
     git (1.10.2)
       rchardet (~> 1.8)
-    kramdown (2.3.1)
+    kramdown (2.3.2)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
