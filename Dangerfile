@@ -22,4 +22,4 @@ warn "Big PR" if git.lines_of_code > 500
 kotlin_detekt.skip_gradle_task = true
 kotlin_detekt.filtering = true
 kotlin_detekt.report_file = "build/reports/detekt/detekt.xml" 
-kotlin_detekt.detekt
+kotlin_detekt.detekt(inline_mode: true)
