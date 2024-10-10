@@ -12,14 +12,14 @@ jobs:
   assemble:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: run shadowJar
         run: ./gradlew shadowJar
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: run test
         run: ./gradlew test
       - name: run koverReport
@@ -29,7 +29,7 @@ jobs:
   ktlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: run ktlintCheck
         run: ./gradlew ktlintCheck
 
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: run detektCheck
         run: ./gradlew detektCheck  
       - uses: ruby/setup-ruby@v1
