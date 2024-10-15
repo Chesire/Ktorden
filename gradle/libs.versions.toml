@@ -15,7 +15,7 @@ ktor-server-host-common = { module = "io.ktor:ktor-server-host-common-jvm", vers
 ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages-jvm", version.ref = "ktor" }
 ktor-server-tests = { module = "io.ktor:ktor-server-tests-jvm", version.ref = "ktor" }
-logback = { module = "ch.qos.logback:logback-classic", version = "1.2.11" }
+logback = { module = "ch.qos.logback:logback-classic", version = "1.5.11" }
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.20.0" }
